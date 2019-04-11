@@ -39,17 +39,19 @@ header p {
     background-color: #F1DFE9;
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(250px, 1fr));
-    justify-content: stretch;
+    justify-content: center;
     grid-gap: 10px;
     border: 2px solid black;
     border-radius: 3px;
     padding: 15px;
+    margin-bottom: 5px;
 }
 
 .container img {
     height: 300px;
     border: 2px solid black;
-    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+    box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.5);
+    cursor: pointer;
 
 }
 
@@ -59,4 +61,51 @@ header p {
 
 header a img {
     height: 100px;
+}
+
+.nsfw {
+    opacity: 0.2;
+    filter: blur(0.2rem);
+    transition: 0.2s ease;
+}
+
+.nsfw:hover {
+    opacity: 1;
+    filter: blur(0)
+}
+
+.art-gallery {
+    position: absolute;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+}
+
+.img-gal {
+    height: 800px; 
+    border: 2px solid black;
+}
+
+.blur {
+   z-index: -1;
+   opacity: 0.1;
+}
+
+i {
+    cursor: pointer;
+}
+
+.img-div {
+    max-width: 70%;
+    min-width: 70%;
+}
+
+.close {
+    align-self: flex-start;
 }
