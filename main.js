@@ -18,7 +18,8 @@ picNumber = e.target.className
 
     if (e.target.className === 'fas fa-arrow-left fa-2x') {        
         console.log(picNumber)
-        if (picNumber >= 1) {
+        if (picNumber > 1) {
+            picNumber--
             document.querySelector('.img-gal').src = `img/${picNumber}.png`
         }
     }
