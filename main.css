@@ -77,7 +77,6 @@ header a img {
 .art-gallery {
     position: absolute;
     width: 100%;
-    margin-top: 30px;
     text-align: center;
     z-index: 10;
     display: flex;
@@ -88,7 +87,7 @@ header a img {
 }
 
 .img-gal {
-    height: 800px; 
+    height: 70vh; 
     border: 2px solid black;
 }
 
@@ -99,6 +98,7 @@ header a img {
 
 i {
     cursor: pointer;
+    padding: 5px;
 }
 
 .img-div {
@@ -108,4 +108,28 @@ i {
 
 .close {
     align-self: flex-start;
+}
+
+.arrow-right {
+    height: 90px;
+    display: grid;
+    align-content: center;
+    cursor: pointer;
+}
+
+.arrow-right:hover {
+    background: rgba(128, 128, 128, 0.349);
+    border-radius: 0.5rem;
+}
+
+.arrow-left {
+    height: 90px;
+    display: grid;
+    align-content: center;
+    cursor: pointer;
+}
+
+.arrow-left:hover {
+    background: rgba(128, 128, 128, 0.349);
+    border-radius: 0.5rem;
 }
