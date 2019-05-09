@@ -20,16 +20,25 @@ header {
     grid-template-columns: repeat(2, 1fr);
 }
 
-header a {
+.logo {
     justify-self: start;
     align-self: end;
 }
 
-header p {
+.twitter {
     justify-self: end;
     align-self: center;
     font-size: 2rem; 
-    margin-right: 10px;   
+    margin-right: 10px;
+    text-decoration: none; 
+}
+
+.twitter p {
+    color: black;
+}
+
+.twitter p:hover {
+    color: rgb(59, 48, 57);
 }
 
 .container {
@@ -38,7 +47,7 @@ header p {
     height: auto;
     background-color: #F1DFE9;
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat( auto-fit, minmax(15rem, 1fr));
     justify-content: center;
     grid-gap: 10px;
     border: 2px solid black;
@@ -48,7 +57,7 @@ header p {
 }
 
 .container img {
-    height: 300px;
+    height: 18rem;
     border: 2px solid black;
     box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.5);
     cursor: pointer;
@@ -63,33 +72,31 @@ header a img {
     height: 100px;
 }
 
-.nsfw {
-    opacity: 0.2;
-    filter: blur(0.2rem);
-    transition: 0.2s ease;
-}
-
-.nsfw:hover {
-    opacity: 1;
-    filter: blur(0)
-}
 
 .art-gallery {
     position: absolute;
     width: 100%;
     text-align: center;
     z-index: 10;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: auto 40vh;
+    grid-template-areas:
+    "close close close"
+    "arrow-left img arrow-right"
+}
+
+.close {
+    grid-area: close;
+    justify-self: end;
 }
 
 .img-gal {
-    height: 70vh; 
+    max-height: 40rem; 
     border: 2px solid black;
+    grid-area: img;
 }
+
 
 .blur {
    z-index: -1;
@@ -102,19 +109,17 @@ i {
 }
 
 .img-div {
-    max-width: 70%;
-    min-width: 70%;
+    max-width: 100%;
+    min-width: 100%;
 }
 
-.close {
-    align-self: flex-start;
-}
 
 .arrow-right {
-    height: 90px;
+    height: 100%;
     display: grid;
     align-content: center;
     cursor: pointer;
+    grid-area: arrow-right;
 }
 
 .arrow-right:hover {
@@ -123,13 +128,66 @@ i {
 }
 
 .arrow-left {
-    height: 90px;
+    height: 100%;
     display: grid;
     align-content: center;
     cursor: pointer;
+    grid-area: arrow-left;
 }
 
 .arrow-left:hover {
     background: rgba(128, 128, 128, 0.349);
     border-radius: 0.5rem;
+}
+
+/* .fa-arrow-right:hover {
+    width: 25%;
+} */
+
+.fa-times {
+    padding-right: 2rem;
+}
+
+
+@media (max-width: 40rem) {
+
+    .container {
+        max-width: 80%;
+        margin: 0 auto;
+        height: auto;
+        background-color: #F1DFE9;
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(13rem, 1fr));
+        justify-content: center;
+        grid-gap: 10px;
+        border: 2px solid black;
+        border-radius: 3px;
+        padding: 15px;
+        margin-bottom: 5px;
+    }
+
+    .container img {
+        height: 15rem;
+        border: 2px solid black;
+        box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.5);
+        cursor: pointer;
+    
+    }
+
+    .art-gallery {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        z-index: 10;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-content: center;
+        align-items: center;
+    }
+    
+    .img-gal {
+        height: 35vh; 
+        border: 2px solid black;
+    }
 }
